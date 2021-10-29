@@ -24,9 +24,9 @@ public class Multiplicar {
 		//[] MATRIZ/ARRAY QUE GUARDA OS VALORES E O LOOPING QUE FOR GERADO
 		String tabuada[] = new String [multiplicadorMaximo + 1];
 		
-		for (int a = 0; a <= multiplicadorMaximo; a++) {
-			int resultado = numerador * a;
-			tabuada[a] = numerador + "X" + a + "=" + resultado;	
+		for (int index = 0; index <= multiplicadorMaximo; index++) {
+			int resultado = numerador * index;
+			tabuada[index] = numerador + "X" + index + "=" + resultado;	
 		}
 		
 		return tabuada;
