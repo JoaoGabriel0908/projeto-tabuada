@@ -131,19 +131,18 @@ public class TelaTabuada {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Multiplicar tabuada = new tabuada();
+				Multiplicar tabuada = new Multiplicar();
 				
-				int numerador = Integer.parseInt(txtNumerador);
-				int multiplicadorMaximo = Integer.parseInt();
+				int numerador = Integer.parseInt(txtNumerador.getText());
+				int multiplicadorMaximo = Integer.parseInt(txtMultiplicadorMaximo.getText());
 				
 				tabuada.setNumerador(numerador);
 				tabuada.setMultiplicador(multiplicadorMaximo);
 				
-				String tabuada[] = new String [multiplicadorMaximo + 1];
+				String[] resultado = tabuada.calcular();
 				
-				for (int index = 0; index <= multiplicadorMaximo; index++) {
-					int resultado = numerador * index;
-					tabuada[index] = numerador + "X" + index + "=" + resultado;	
+				for (int index = 0; index < resultado.length ; index++) {
+					tabuadaModel.addElement(resultado[index]);
 				}
 				
 			}
@@ -155,6 +154,7 @@ public class TelaTabuada {
 			public void actionPerformed(ActionEvent e) {
 				txtNumerador.setText("");
 				txtMultiplicadorMaximo.setText("");
+				txtNumerador.requestFocus();
 				
 			}
 		});
